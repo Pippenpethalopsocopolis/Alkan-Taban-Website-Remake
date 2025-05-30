@@ -1,16 +1,14 @@
-import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+
+import NavigationBar from './NavigationBar';
+import Footer from './Footer.jsx';
 import './LandingPage.css';
 
 const LandingPage = () => {
-    const [scrollY, setScrollY] = useState(0);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const scrollY = useSelector((state) => state.landingPage.scrollY);
 
     const stats = [
         { number: '50+', label: 'PARTNER ŞİRKETLER' },
@@ -43,31 +41,9 @@ const LandingPage = () => {
     ];
 
     return (
-        <div className="app-container">            {/* Navigation */}
-            <nav className={`navbar ${scrollY > 50 ? 'navbar-scrolled' : ''}`}>
-                <div className="nav-container">
-                    <Link to="/">
-                        <img className="logo" src="./assets/logo.png" alt="Alkan Taban Logo" />
-                    </Link>
-
-                    <div className="nav-links">
-                        <Link to="/" className="nav-link">
-                            Ana Sayfa
-                        </Link>
-
-                        <Link to="/hakkimizda" className="nav-link">
-                            Hakkımızda
-                        </Link>
-                        
-                        <Link to="/iletisim" className="nav-link">
-                            İletişim
-                        </Link>
-                        <button className="cta-button" onClick={() => navigate('/iletisim')}>
-                            Bize Ulaşın
-                        </button>
-                    </div>
-                </div>
-            </nav>
+        <div className="app-container">
+            {/* Navigation */}
+            <NavigationBar />
 
             {/* Hero Section */}
             <section className="hero-section">
@@ -85,13 +61,17 @@ const LandingPage = () => {
                         <h1 className="hero-title">
                             Önde Gelen Ayakkabı Üreticileri İçin Endüstriyel Ayakkabı Tabanı Üretimi
                         </h1>
+                        
                         <p className="hero-description">
                             Sektörün en güvenilir taban üreticisiyle iş ortaklığı kurun. En yüksek performans,
                             dayanıklılık ve yenilik standartlarını karşılayan, hassas mühendislikle üretilmiş ayakkabı tabanlarını sunuyoruz.
-                        </p>                        <div className="hero-buttons">
+                        </p>
+                        
+                        <div className="hero-buttons">
                             <button className="primary-button" onClick={() => navigate('/iletisim')}>
                                 Bize Ulaşın
                             </button>
+                            
                             <button
                                 className="secondary-button"
                                 onClick={() => {
@@ -175,7 +155,8 @@ const LandingPage = () => {
                             Tarayıcınız video oynatıcısını desteklemiyor.
                         </video>
                     </div>
-                    <div id='about-button-container'>                        <button id="about-button" onClick={() => navigate('/hakkimizda')}>
+                    <div id='about-button-container'>
+                        <button id="about-button" onClick={() => navigate('/hakkimizda')}>
                             Hakkımızda Daha Fazla Bilgi Alın
                         </button>
                     </div>
@@ -191,7 +172,8 @@ const LandingPage = () => {
                     <p className="cta-description">
                         Taban üretimi ihtiyaçları için Alkan Taban'a güvenen onlarca sektör lideri ayakkabı üreticisine katılın.
                         Ayrıntıları birlikte değerlendirelim ve markanız için en iyi çözümleri sunalım.
-                    </p>                    <div className="cta-buttons">
+                    </p>
+                    <div className="cta-buttons">
                         <button className="cta-primary-button" onClick={() => navigate('/iletisim')}>
                             Bize Ulaşın ve Üretiminizi Büyütün
                         </button>
@@ -200,30 +182,7 @@ const LandingPage = () => {
             </section>
 
             {/* Footer */}
-            <footer className="footer">
-                <div className="footer-container">
-                    <img className="logo" src="./assets/logo.png" />
-                    <p className="footer-tagline">
-                        1975’ten beri ayakkabı üretim sektörünün temelini mühendislikle şekillendiriyoruz.
-                    </p>                    <div className="footer-links">
-                        <Link to="/" className="footer-link">
-                            Ana Sayfa
-                        </Link>
-                        <Link to="/hakkimizda" className="footer-link">
-                            Hakkımızda
-                        </Link>
-                        <Link to="/iletisim" className="footer-link">
-                            İletişim
-                        </Link>
-                        <a href="#" className="footer-link">
-                            Gizlilik Politikamız
-                        </a>
-                    </div>
-                    <div className="footer-copyright">
-                        © 2025 Alkan Taban San. Tic. LTD ŞTİ. Tüm hakları saklıdır.
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

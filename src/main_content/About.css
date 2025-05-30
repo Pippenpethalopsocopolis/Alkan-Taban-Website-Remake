@@ -1,0 +1,556 @@
+.app-container {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #e5e5e5;
+    overflow-x: hidden;
+}
+
+/* About Hero Section */
+.about-hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero-container {
+    width: 100%;
+    padding: 0 2rem;
+    z-index: 2;
+    position: relative;
+}
+
+.about-hero-content {
+    text-align: center;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.about-hero-title {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #f8fafc;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.about-hero-description {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-weight: 400;
+
+    text-align: justify;
+    text-align-last: left; /* Son satırı sola hizala */
+    hyphens: auto; /* Otomatik tire */
+}
+
+
+
+
+.stats-section {
+    padding: 5rem 2rem;
+    background-color: #0f172a;
+    border-top: 1px solid rgba(71, 85, 105, 0.2);
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    text-align: center;
+}
+
+.stat-card {
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(71, 85, 105, 0.05));
+    border-radius: 8px;
+    border: 1px solid rgba(71, 85, 105, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.stat-card:hover::before {
+    left: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(71, 85, 105, 0.08));
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+
+/* Company Story Section */
+.company-story-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+.company-story-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.company-story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.company-story-content {
+    padding-right: 2rem;
+}
+
+.company-story-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #f8fafc;
+    letter-spacing: -0.02em;
+}
+
+.company-story-description {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.company-story-image {
+    text-align: center;
+}
+
+/* Image Swiper Styles */
+.image-swiper {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.swiper-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.swiper-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.swiper-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide img:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation Arrows */
+.swiper-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(248, 250, 252, 0.9);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-nav:hover {
+    background: rgba(248, 250, 252, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.swiper-prev {
+    left: 15px;
+}
+
+.swiper-next {
+    right: 15px;
+}
+
+/* Pagination Dots */
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.swiper-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(203, 213, 225, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.swiper-dot:hover {
+    background: rgba(203, 213, 225, 0.7);
+    transform: scale(1.2);
+}
+
+.swiper-dot.active {
+    background: #f8fafc;
+    transform: scale(1.3);
+    box-shadow: 0 0 8px rgba(248, 250, 252, 0.5);
+}
+
+
+
+/* Values Section */
+.values-section {
+    padding: 5rem 2rem;
+    background-color: #0f172a;
+}
+
+.values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.values-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.values-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #f8fafc;
+    letter-spacing: -0.02em;
+}
+
+.values-description {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    padding: 2.5rem;
+    background: rgba(30, 41, 59, 0.6);
+    border-radius: 8px;
+    border: 1px solid rgba(71, 85, 105, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-color, #3b82f6);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover::before {
+    transform: scaleX(1);
+}
+
+.value-card:hover {
+    transform: translateY(-3px);
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.value-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #f8fafc;
+}
+
+.value-description {
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+
+.cta-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    text-align: center;
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #f8fafc;
+    letter-spacing: -0.02em;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: #dbeafe;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-primary-button {
+    background: #ffffff;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    color: #1e40af;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-primary-button:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #1e40af;
+}
+
+.cta-secondary-button {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-secondary-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+
+
+#about-hero-description-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10rem;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .company-story-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .company-story-content {
+        padding-right: 0;
+    }
+    
+    .image-swiper {
+        max-width: 400px;
+    }
+    
+    .swiper-slide img {
+        height: 300px;
+    }
+    
+    .about-hero-description-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero-section {
+        min-height: 70vh;
+        margin-top: 60px;
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .company-story-description {
+        font-size: 1rem;
+    }
+    
+    .image-swiper {
+        max-width: 350px;
+    }
+    
+    .swiper-slide img {
+        height: 250px;
+    }
+    
+    .swiper-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .swiper-prev {
+        left: 10px;
+    }
+    
+    .swiper-next {
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero-container,
+    .stats-container,
+    .company-story-container,
+    .values-container,
+    .cta-container {
+        padding: 0 1rem;
+    }
+    
+    .image-swiper {
+        max-width: 100%;
+    }
+    
+    .swiper-slide img {
+        height: 200px;
+    }
+    
+    .swiper-nav {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .swiper-prev {
+        left: 5px;
+    }
+    
+    .swiper-next {
+        right: 5px;
+    }
+    
+    .swiper-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
