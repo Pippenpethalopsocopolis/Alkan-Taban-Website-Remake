@@ -19,15 +19,13 @@ function Footer() {
 
                     <Link to="/hakkimizda" className="footer-link">
                         Hakkımızda
-                    </Link>
-
-                    <Link to="/iletisim" className="footer-link">
+                    </Link>                    <Link to="/iletisim" className="footer-link">
                         İletişim
                     </Link>
 
-                    <a href="#" className="footer-link">
+                    <Link to="/gizlilik-politikasi" className="footer-link">
                         Gizlilik Politikamız
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="footer-copyright">
