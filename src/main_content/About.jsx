@@ -11,7 +11,10 @@ function About() {
     const companyImages = [
         { src: './assets/Photo-1.jpg', alt: 'Alkan Taban Tesis Dışı 1' },
         { src: './assets/Photo-6.jpg', alt: 'Alkan Taban Tesis Dışı 2' },
-        { src: './assets/Untitled_Panorama3.jpg', alt: 'Alkan Taban Tesis Dışı 3' }
+        { src: './assets/Untitled_Panorama3.jpg', alt: 'Alkan Taban Tesis Dışı 3' },
+        { src: './assets/184.jpg', alt: 'Alkan Taban Tesis Dışı 4' },
+        { src: './assets/196.jpg', alt: 'Alkan Taban Tesis Dışı 5' },
+        { src: './assets/244.jpg', alt: 'Alkan Taban Tesis Dışı 6' }
     ];
 
     // Auto-play functionality
