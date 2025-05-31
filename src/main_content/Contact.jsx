@@ -1,5 +1,6 @@
 import NavigationBar from './NavigationBar';
 import Footer from './Footer';
+import CookieConsent from './CookieConsent';
 import './Contact.css';
 
 function Contact() {
@@ -22,7 +23,7 @@ function Contact() {
                             İletişim
                         </h1>
                         <p className="contact-hero-description">
-                            Ayakkabı tabanı üretimi ihtiyaçlarınız için bizimle iletişime geçin.
+                            Ayakkabı tabanı ihtiyaçlarınız için bizimle iletişime geçin.
                             Uzman ekibimiz size en uygun çözümleri sunmak için hazır.
                         </p>
                     </div>
@@ -125,6 +126,9 @@ function Contact() {
                     </div>
                 </div>
             </section>
+
+            {/* Cookie Consent */}
+            <CookieConsent />
 
             {/* Footer */}
             <Footer />

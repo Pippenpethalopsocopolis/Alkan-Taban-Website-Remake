@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import NavigationBar from './NavigationBar';
-
 import Footer from './Footer';
+import CookieConsent from './CookieConsent';
 import './About.css';
 
 function About() {
@@ -229,6 +229,9 @@ function About() {
                     </div>
                 </div>
             </section>
+
+            {/* Cookie Consent */}
+            <CookieConsent />
 
             {/* Footer */}
             <Footer />

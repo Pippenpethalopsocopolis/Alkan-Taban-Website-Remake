@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import NavigationBar from './NavigationBar';
 import Footer from './Footer.jsx';
+import CookieConsent from './CookieConsent';
 import './LandingPage.css';
 
 const LandingPage = () => {
@@ -183,6 +184,9 @@ const LandingPage = () => {
 
             {/* Footer */}
             <Footer />
+
+            {/* Cookie Consent */}
+            <CookieConsent />
         </div>
     );
 };
