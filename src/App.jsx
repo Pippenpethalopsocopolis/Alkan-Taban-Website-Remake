@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
@@ -9,6 +10,10 @@ import store from  './redux_store/Store';
 import './App.css';
 
 function App() {
+    useEffect(() => {
+        document.title = "Alkan Taban - Kalite Şansa Bırakılmaz"; // Set your global title here
+    }, []);
+
     return (
         <Provider store={store}>
             <BrowserRouter>
