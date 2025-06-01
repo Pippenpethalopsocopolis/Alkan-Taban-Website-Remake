@@ -6,7 +6,7 @@ function Footer() {
     return (
         <footer className="footer">
             <div className="footer-container">
-                <img className="footor-logo" src="./assets/logo.png" />
+                <img className="footor-logo" src="./assets/logo.png" alt='logo' />
 
                 <p className="footer-tagline">
                     1975’ten beri ayakkabı üretim sektörünün temelini mühendislikle şekillendiriyoruz.
