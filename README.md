@@ -1,2 +1,5 @@
 # Alkan Taban Website Project
-Website project for Alkan Tabancılık San. Tic. Ltd. Şti.
+
+Modern remake of www.alkantaban.com
+
+*It has no affiliation with official institutions or organizations; it's a project I made for self-improvement.*
