@@ -1,5 +1,7 @@
 # Alkan Taban Website Project
 
+Copyright (C) <2025> <Berk ÖCAL>
+
 Modern remake of www.alkantaban.com
 
 *It has no affiliation with official institutions or organizations; it's a project I made for self-improvement.*
